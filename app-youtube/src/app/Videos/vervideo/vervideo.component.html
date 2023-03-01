@@ -1,0 +1,22 @@
+<div class="mt-2 col-md-3 mx-auto">
+    <input type="search" [(ngModel)]="searchTerm">
+    <button class=" btn btn-sm btn-outline-danger mb-1 mx-2 ">Buscar</button>
+    <button class=" btn btn-sm btn-outline-success mb-1 mx-5 " (click)="OnPDF()">Generar PDF</button>
+</div>
+<div class="row ">
+    <div *ngFor="let item of videos|filter:searchTerm" class="col-md-3 p-3 ">
+        <div class="card " style="width: 18rem; ">
+            <iframe width="286" height="215" [src]="getVideoIframe(item.url)" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <div class="card-body ">
+                <h5 class="card-title ">Nombre del Canal: {{item.nombreCanal}}</h5>
+                <h5 class="card-title ">Cantidad de seguidores: {{item.seguidor}}</h5>
+            </div>
+            <div class="mb-2 mx-2">
+                <button class="btn btn-outline-primary" (click)="onUpdate(item.id)">editar</button>
+                <button class="btn btn-outline-danger mx-2" (click)="onDelete(item.id)">eliminar</button>
+            </div>
+            <div>
+            </div>
+        </div>
+    </div>
+</div>

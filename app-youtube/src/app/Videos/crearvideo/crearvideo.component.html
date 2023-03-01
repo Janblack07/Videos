@@ -1,0 +1,23 @@
+<div class="wrapper fadeInDown">
+    <div id="formContent">
+
+        <form [formGroup]="videoForm" (ngSubmit)="registroVideo(videoForm.value)">
+            <div>
+                <br>
+                <label for="">Nombre del Canal</label>
+                <input type="text" class="fadeIn second mt-3" placeholder="Nombre del Canal" formControlName="nombreCanal">
+            </div>
+            <div>
+                <br>
+                <label for="">Url del Canal</label>
+                <input type="text" class="fadeIn second mt-3" placeholder="Url del Canal" formControlName="url">
+            </div>
+            <div>
+                <br>
+                <label for="">Seguidores del Canal</label>
+                <input type="text" class="fadeIn second mt-3" placeholder="Seguidores del Canal" formControlName="seguidor">
+            </div>
+            <div>
+                <input type="submit" class="fadeIn fourth mt-3" value="crear Video">
+            </div>
+        </form>
